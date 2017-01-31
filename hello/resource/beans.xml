@@ -10,5 +10,11 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 	</bean>
 
 
-
+<bean id="travell" class="com.niit.ps.dependency.Traveller">
+<property name="kmdistance"  value="20"></property>
+<property name="vehicle"  ref="auto"></property>
+</bean>
+<bean id="auto" class="com.niit.ps.dependency.Auto">
+<property name="price" value="50"></property>
+</bean>
 </beans>
