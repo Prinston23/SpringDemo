@@ -8,8 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form:form action="" commandName="product">
+<div class="container-wrapper">
+<div class="container">
+<form:form action="/admin/product/addProduct" commandName="product">
 
 <div class="form-group">
   <label></label>
@@ -17,34 +18,34 @@
 </div>
 
 <div class="form-group">
-  <label>NAME</label>
+  <label for="name">NAME</label>
   <form:input path="name" class="form-control"/>
 </div>
 
 <div class="form-group">
-  <label>DESCRIPTION</label>
+  <label for="description">DESCRIPTION</label>
   <form:input path="description" class="form-control"/>
 </div>
 
 <div class="form-group">
-  <label>PRICE</label>
+  <label for="price">PRICE</label>
   <form:input path="price" class="form-control"/>
 </div>
 
 <div class="form-group">
-  <label>QUANTITY</label>
+  <label for="quantity">QUANTITY</label>
   <form:input path="quantity" class="form-control"/>
 </div>
 
 <div class="form-group">
-  <label>Mfg Date</label>
+  <label for="mfg">Mfg Date</label>
   <form:input path="mfg" class="form-control"/>
 </div>
 
 <input type="submit" value="Add Product" class="btn btn-default">
 
 </form:form>
-
-
+</div>
+</div>
 </body>
 </html>
