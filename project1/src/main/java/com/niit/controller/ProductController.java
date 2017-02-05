@@ -2,6 +2,7 @@ package com.niit.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +26,10 @@ public class ProductController {
 	  return "productform";
 	  
   }
-	@RequestMapping("/admin/product/addproduct")
-	public ModelAndView saveProduct(@ModelAttribute(value="product")Product product){
+	@RequestMapping("/admin/product/addProduct")
 	
+	public ModelAndView saveProduct(@ModelAttribute(value="product")Product product){
+	     
 		Product newProduct=productService.saveProduct(product);
 		return new ModelAndView("productlist","product",newProduct);
 		

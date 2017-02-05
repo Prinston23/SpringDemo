@@ -19,7 +19,7 @@
 		<ul class="nav navbar-nav ">
 			<li><a href="Home">Home</a></li>
 			<li><a href="aboutus">About us</a></li>
-			<li><a href="productform">Add Product</a>
+			<li><a href="admin/product/productform">Add Product</a>
 			
 		</ul>
 	</div>
