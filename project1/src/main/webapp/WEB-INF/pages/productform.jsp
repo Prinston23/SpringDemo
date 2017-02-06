@@ -32,6 +32,11 @@
 </div>
 
 <div class="form-group">
+<label for="category">Category</label>
+<form:input path="category.id" class="form-control"/>
+</div>
+
+<div class="form-group">
 <label for="price">Price</label>
 <form:input path="price" class="form-control" />
 </div>

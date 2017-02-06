@@ -14,7 +14,7 @@ public class ProductServiceImpl implements ProductService{
  
  public Product saveProduct(Product product) {
 		
-		return null;
+		return productDao.saveProduct(product);
 	}
 
 }
