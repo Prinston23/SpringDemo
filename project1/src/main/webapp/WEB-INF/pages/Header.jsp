@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page isELIgnored="false"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="false" %>
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -20,11 +24,11 @@
 <body>
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
-		<ul class="nav navbar-nav ">
+		<ul class="nav navbar-nav">
 			<li><a href="Home">Home</a></li>
 			<li><a href="aboutus">About us</a></li>
 			<li><a href="admin/product/productform">Add Product</a>
-			
+	        <li><a href="all/product/getAllProducts">Browse All Products</a>
 		</ul>
 	</div>
 	</nav>
