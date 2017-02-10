@@ -1,4 +1,4 @@
-                    <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -20,7 +20,7 @@ $('input[name=mfg]').datepicker({
 <body>
 <div class="container-wrapper">
 <div class="container">
-<c:url value="/admin/product/addProduct" var="url"></c:url>
+<c:url value="/admin/product/editProduct" var="url"></c:url>
 <form:form action="${url }"  commandName="product">
 
 <div class="form-group">
@@ -70,7 +70,7 @@ out.println(c.categoryDetails);
 <form:errors path="mfg" cssStyle="color:#ff0000"></form:errors>
 </div>
 
-<input type="submit" value="Add Product" class="btn btn-default">
+<input type="submit" value="Edit Product" class="btn btn-default">
 </form:form>
 
 </div>

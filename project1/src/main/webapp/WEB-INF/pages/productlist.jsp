@@ -18,15 +18,22 @@
 			</thead>
 			<c:forEach var="p" items="${productList }">
 				<tr>
+				    <td>${p.name }</td>
 					<td>${p.description }</td>
 					<td>${p.category.categoryDetails }</td>
 				</tr>
 				<tr>
-				<c:url var="url" value="/all/product/viewproduct/${p.id}"></c:url>
-				<td><a href="${url}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+					<c:url var="url" value="/all/product/viewproduct/${p.id}"></c:url>
+					<td><a href="${url}"><span
+							class="glyphicon glyphicon-info-sign"></span></a> <c:url var="delete"
+							value="/admin/product/deleteproduct/${p.id}"></c:url> <a
+						href="${delete }"><span class="glyphicon glyphicon-remove"></span></a>
+						<c:url var="update" value="/admin/product/editform/${p.id }"></c:url>
+						<a href="${update }"><span class="glyphicon glyphicon-pencil"></span></a></td>
+
 				</tr>
 			</c:forEach>
-			</table>
+		</table>
 
 
 	</div>

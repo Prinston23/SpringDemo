@@ -60,5 +60,26 @@ public class ProductController {
 		Product product = productService.getProductById(id);
 		model.addAttribute("product", product);
 		return "viewproduct";
+	}@RequestMapping("/admin/product/deleteproduct/{id}")
+	public String deleteProduct(@PathVariable int id){
+		
+		productService.deleteProduct(id);
+		return "redirect:/all/product/getAllProducts";
 	}
-}
+	@RequestMapping("/admin/product/editform/{id}")
+	public String editProductForm(@PathVariable int id,Model model){
+		Product product=productService.getProductById(id);
+		model.addAttribute("product",product);
+		model.addAttribute("categories",categoryService.getCategories());
+		return "editproductform";
+	}
+	@RequestMapping("/admin/product/editProduct")
+	public String editProductDetails(@Valid @ModelAttribute("product") Product product,
+			BindingResult result){
+		if(result.hasErrors())
+			return "productform";
+		productService.updateProduct(product);
+		return "redirect:/all/product/getAllProducts";
+	}
+
+	}

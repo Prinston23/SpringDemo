@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
 
 
 <html>
@@ -16,22 +16,28 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
-         rel = "stylesheet">
-      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	</head>
+<link
+	href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
 <body>
-<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
-			<li><a href="Home">Home</a></li>
-			<li><a href="aboutus">About us</a></li>
-			<li><a href="admin/product/productform">Add Product</a>
-	        <li><a href="all/product/getAllProducts">Browse All Products</a>
+			<li><c:url var="home" value="/Home"></c:url></li>
+			<li><a href="${home }">Home</a></li>
+			<li><c:url var="aboutus" value="/aboutus"></c:url></li>
+			<li><a href="${aboutus }">About us</a></li>
+			<li><c:url var="url" value="/admin/product/productform"></c:url></li>
+			<li><a href="${url }">Add Product</a>
+			<li><c:url var="allProducts" value="/all/product/getAllProducts"></c:url></li>
+			<li><a href="${allProducts }">Browse All Products</a>
 		</ul>
 	</div>
 	</nav>
 
 </body>
 </html>
+s

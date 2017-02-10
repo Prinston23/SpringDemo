@@ -42,5 +42,23 @@ private SessionFactory sessionFactory;
 		session.close();
 		return product;
 	}
+	public void deleteProduct(int id){
+		Session session=sessionFactory.openSession();
+		Product product=(Product) session.get(Product.class,id);
+		session.delete(product);
+		session.flush();
+		session.close();
+	
+	}
+
+	public void updateProduct(Product product) {
+		Session session=sessionFactory.openSession();
+		System.out.println("Id of the product in dao is " + product.getId());
+		
+		session.update(product);
+		session.flush();
+		session.close();
+		
+	}
 
 }

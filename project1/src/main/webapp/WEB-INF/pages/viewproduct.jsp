@@ -24,7 +24,7 @@
 			</tr>
 			<tr>
 			<td>Category Details</td>
-			<td>${product.category.categoryDeatails }</td>
+			<td>${product.category.categoryDetails }</td>
 			</tr>
 			<tr>
 			<td>Manufacturing Date</td>
