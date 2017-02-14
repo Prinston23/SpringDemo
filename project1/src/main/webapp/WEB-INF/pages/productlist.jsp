@@ -6,6 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script>
+	$(document).ready(function() {
+		var searchCondition = '${searchCondition}';
+		$('.table').DataTable({
+			"lengthMenu" : [ [ 3, 5, 7, -1 ], [ 3, 5, 7, "All" ] ],
+			"oSearch" : {
+				"sSearch" : searchCondition
+			}
+		})
+	});
+</script>
 </head>
 <body>
 	<div class="container">
@@ -14,15 +25,16 @@
 				<tr>
 					<th>Product Name</th>
 					<th>Description</th>
+					<th>Category</th>
+					<th>View/Edit/Delete</th>
 				</tr>
 			</thead>
 			<c:forEach var="p" items="${productList }">
 				<tr>
-				    <td>${p.name }</td>
+					<td>${p.name }</td>
 					<td>${p.description }</td>
 					<td>${p.category.categoryDetails }</td>
-				</tr>
-				<tr>
+
 					<c:url var="url" value="/all/product/viewproduct/${p.id}"></c:url>
 					<td><a href="${url}"><span
 							class="glyphicon glyphicon-info-sign"></span></a> <c:url var="delete"

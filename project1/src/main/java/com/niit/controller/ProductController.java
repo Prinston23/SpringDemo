@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.service.*;
@@ -28,11 +29,12 @@ public class ProductController {
 	public ProductController() {
 		System.out.println("CREATING INSTANCE FOR PRODUCTCONTROLLER");
 	}
+
 	@RequestMapping("/admin/product/productform")
-	public String getProductForm(Model model){
-		//Product product = new Product();
-		model.addAttribute("product",new Product());
-		model.addAttribute("categories",categoryService.getCategories());
+	public String getProductForm(Model model) {
+		// Product product = new Product();
+		model.addAttribute("product", new Product());
+		model.addAttribute("categories", categoryService.getCategories());
 		return "productform";
 	}
 
@@ -42,7 +44,7 @@ public class ProductController {
 			BindingResult result) {
 		if (result.hasErrors())
 			return "productform";
-	Product newProduct=productService.saveProduct(product);
+		Product newProduct = productService.saveProduct(product);
 		return "redirect:/all/product/getAllProducts";
 
 	}
@@ -60,26 +62,42 @@ public class ProductController {
 		Product product = productService.getProductById(id);
 		model.addAttribute("product", product);
 		return "viewproduct";
-	}@RequestMapping("/admin/product/deleteproduct/{id}")
-	public String deleteProduct(@PathVariable int id){
-		
+	}
+
+	@RequestMapping("/admin/product/deleteproduct/{id}")
+	public String deleteProduct(@PathVariable int id) {
+
 		productService.deleteProduct(id);
 		return "redirect:/all/product/getAllProducts";
 	}
+
 	@RequestMapping("/admin/product/editform/{id}")
-	public String editProductForm(@PathVariable int id,Model model){
-		Product product=productService.getProductById(id);
-		model.addAttribute("product",product);
-		model.addAttribute("categories",categoryService.getCategories());
+	public String editProductForm(@PathVariable int id, Model model) {
+		Product product = productService.getProductById(id);
+		model.addAttribute("product", product);
+		model.addAttribute("categories", categoryService.getCategories());
 		return "editproductform";
 	}
+
 	@RequestMapping("/admin/product/editProduct")
-	public String editProductDetails(@Valid @ModelAttribute("product") Product product,
-			BindingResult result){
-		if(result.hasErrors())
+	public String editProductDetails(
+			@Valid @ModelAttribute("product") Product product,
+			BindingResult result) {
+		if (result.hasErrors())
 			return "productform";
 		productService.updateProduct(product);
 		return "redirect:/all/product/getAllProducts";
 	}
 
+	@RequestMapping("/all/product/productsByCategory")
+	public String getProductsByCategory(
+			@RequestParam(name = "searchCondition") String searchCondition,
+			Model model) {
+		List<Product> products = productService.getAllProducts();
+
+		model.addAttribute("productList", products);
+		model.addAttribute("searchCondition", searchCondition);
+		return "productlist";
 	}
+
+}

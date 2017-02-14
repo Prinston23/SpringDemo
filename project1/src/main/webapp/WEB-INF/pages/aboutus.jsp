@@ -15,6 +15,5 @@ Gurgaon, Haryana - 122001,<br>
 India<br>
 Tel: 91-124-429 3000<br>
  www.niit.com<br>
-
 </body>
 </html>

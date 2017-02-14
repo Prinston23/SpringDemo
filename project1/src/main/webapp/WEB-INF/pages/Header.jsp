@@ -21,6 +21,14 @@
 	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
+<link
+	href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css"
+	rel="stylesheet">
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -34,10 +42,28 @@
 			<li><a href="${url }">Add Product</a>
 			<li><c:url var="allProducts" value="/all/product/getAllProducts"></c:url></li>
 			<li><a href="${allProducts }">Browse All Products</a>
+			<li class="dropdown"><a href="" class="dropdown-toggle"
+				data-toggle="dropdown"> Select by Category<b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<c:url var="url1"
+						value="/all/product/productsByCategory?searchCondition=Pendrive"></c:url>
+					<li><a href="${url1}">New Arrivals</a></li>
+
+					<c:url var="url_2"
+						value="/all/product/productsByCategory?searchCondition=Hot Sale"></c:url>
+					<li><a href="${url_2}">Hot Sale</a></li>
+
+					<c:url var="url3"
+						value="/all/product/productsByCategory?searchCondition=General"></c:url>
+					<li><a href="${url3}">General</a></li>
+
+
+
+				</ul></li>
 		</ul>
 	</div>
 	</nav>
 
 </body>
 </html>
-s
+

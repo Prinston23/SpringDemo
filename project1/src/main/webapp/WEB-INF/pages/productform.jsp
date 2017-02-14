@@ -11,10 +11,11 @@
 <title>Insert title here</title>
 <script>
 $(function(){
-$('input[name=mfg]').datepicker({
-	format:'YYYY-mm-dd'
-});	
-});
+	$('input[name=mfg]').datepicker({
+		format:'YYYY-mm-dd'
+	});	
+	});
+
 </script>
 </head>
 <body>
