@@ -23,6 +23,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<th>Image</th>
 					<th>Product Name</th>
 					<th>Description</th>
 					<th>Category</th>
@@ -31,6 +32,8 @@
 			</thead>
 			<c:forEach var="p" items="${productList }">
 				<tr>
+					<td><c:url var="src" value="resources/images/${p.id }.png"></c:url>
+						<img src="${src }" /></td>
 					<td>${p.name }</td>
 					<td>${p.description }</td>
 					<td>${p.category.categoryDetails }</td>
