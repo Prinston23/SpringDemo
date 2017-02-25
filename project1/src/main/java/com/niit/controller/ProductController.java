@@ -98,7 +98,7 @@ public class ProductController {
 	@RequestMapping("/admin/product/editProduct")
 	public String editProductDetails(
 			@Valid @ModelAttribute("product") Product product,
-			BindingResult result) {
+			BindingResult result,Model model) {
 		if (result.hasErrors())
 			return "productform";
 		productService.updateProduct(product);

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ include file="Header.jsp"%>
+<%@ include file="header.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,8 +31,8 @@
 				</tr>
 			</thead>
 			<c:forEach var="p" items="${productList }">
-				<tr>
-					<td><c:url var="src" value="resources/images/${p.id }.png"></c:url>
+				 <tr>
+					<td><c:url var="src" value="/resources/image/${p.id }.png"></c:url>
 						<img src="${src }" /></td>
 					<td>${p.name }</td>
 					<td>${p.description }</td>

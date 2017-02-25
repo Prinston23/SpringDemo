@@ -34,7 +34,7 @@
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav">
-			<li><c:url var="home" value="/Home"></c:url></li>
+			<li><c:url var="home" value="/home"></c:url></li>
 			<li><a href="${home }">Home</a></li>
 			<li><c:url var="aboutus" value="/aboutus"></c:url></li>
 			<li><a href="${aboutus }">About us</a></li>
@@ -42,6 +42,7 @@
 			<li><a href="${url }">Add Product</a>
 			<li><c:url var="allProducts" value="/all/product/getAllProducts"></c:url></li>
 			<li><a href="${allProducts }">Browse All Products</a>
+			<li> <a href="<c:url value="/all/registrationForm"></c:url>">Register</a></li>
 			<li class="dropdown"><a href="" class="dropdown-toggle"
 				data-toggle="dropdown"> Select by Category<b class="caret"></b></a>
 				<ul class="dropdown-menu">
