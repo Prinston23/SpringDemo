@@ -42,13 +42,12 @@
 			<li><a href="${url }">Add Product</a>
 			<li><c:url var="allProducts" value="/all/product/getAllProducts"></c:url></li>
 			<li><a href="${allProducts }">Browse All Products</a>
-			<li> <a href="<c:url value="/all/registrationForm"></c:url>">Register</a></li>
 			<li class="dropdown"><a href="" class="dropdown-toggle"
 				data-toggle="dropdown"> Select by Category<b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<c:url var="url1"
 						value="/all/product/productsByCategory?searchCondition=Pendrive"></c:url>
-					<li><a href="${url1}">New Arrivals</a></li>
+					<li><a href="${url1}">Electronics</a></li>
 
 					<c:url var="url_2"
 						value="/all/product/productsByCategory?searchCondition=Hot Sale"></c:url>
@@ -59,8 +58,9 @@
 					<li><a href="${url3}">General</a></li>
 
 
-
 				</ul></li>
+			<li><a href="<c:url value="/all/registrationForm"></c:url>">Register</a></li>
+
 		</ul>
 	</div>
 	</nav>
