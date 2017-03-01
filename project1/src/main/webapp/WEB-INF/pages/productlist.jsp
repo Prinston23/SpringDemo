@@ -32,8 +32,8 @@
 			</thead>
 			<c:forEach var="p" items="${productList }">
 				 <tr>
-					<td><c:url var="src" value="/resources/image/${p.id }.png"></c:url>
-						<img src="${src }" /></td>
+					<td><c:url var="src" value="/resources/image/${p.id}.png"></c:url>
+						<img src="${src}" /></td>
 					<td>${p.name }</td>
 					<td>${p.description }</td>
 					<td>${p.category.categoryDetails }</td>

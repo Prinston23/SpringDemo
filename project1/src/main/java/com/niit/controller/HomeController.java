@@ -26,5 +26,8 @@ public class HomeController {
 		logger.debug("ENTERING ABOUTUS METHOD IN HOMECONTROLLER");
 		return"aboutus";
 	}
-
+	@RequestMapping("/login")
+	public String login(){	
+		return "login";
+	}
 }
